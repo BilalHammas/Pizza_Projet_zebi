@@ -4,7 +4,7 @@ public class CarbonaraHut extends Carbonara {
 
     CarbonaraHut(){
         super();
-        //mini test de bg
+        setName("CarbonaraHut");
         addIngredient(new Olive());
     }
 
