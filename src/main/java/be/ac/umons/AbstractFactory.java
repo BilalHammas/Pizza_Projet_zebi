@@ -13,6 +13,9 @@ public abstract class AbstractFactory
         else{
             return null;
         }
-    };
+    }
+   public  Pizza createPizza(String name){
+        return new Pizza(name);
+    }
 
 }

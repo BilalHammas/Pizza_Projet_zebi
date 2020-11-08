@@ -2,6 +2,7 @@ package be.ac.umons;
 
 public class Carbonara extends Pizza
 {
+
     Carbonara()
     {
         super("Carbonara");
