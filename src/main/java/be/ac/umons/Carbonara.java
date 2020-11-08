@@ -9,5 +9,6 @@ public class Carbonara extends Pizza
         addIngredient(new WhiteSauce());
         addIngredient(new Cheese());
         addIngredient(new Ham());
+        //ceci est un commentaire
     }
 }
