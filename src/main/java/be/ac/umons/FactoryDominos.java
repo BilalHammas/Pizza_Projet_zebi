@@ -2,6 +2,14 @@ package be.ac.umons;
 
 public class FactoryDominos extends AbstractFactory {
 
+    private static FactoryDominos Dominos=null;
+    public static  FactoryDominos getFactory() {
+        if (Dominos==null) {
+            return new FactoryDominos();
+        }
+        return Dominos;
+
+    }
 
     static int stockP=2;
     static int stockM=2;

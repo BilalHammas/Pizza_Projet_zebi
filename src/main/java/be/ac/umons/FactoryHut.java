@@ -2,6 +2,17 @@ package be.ac.umons;
 
 public class FactoryHut extends AbstractFactory {
 
+    private static FactoryHut Hut=null;
+    public static  FactoryHut getFactory() {
+        if (Hut==null) {
+            return new FactoryHut();
+        }
+        return Hut;
+
+    }
+
+
+
     static int stockP=2;
     static int stockM=2;
     static int stockF=2;
