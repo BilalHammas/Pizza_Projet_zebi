@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Ingredient {
     private String name;
-    private BigDecimal price;
+    private float price;
 
     public Ingredient() {
     }
@@ -17,11 +17,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public BigDecimal getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 }

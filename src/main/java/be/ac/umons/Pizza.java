@@ -2,8 +2,8 @@ package be.ac.umons;
 import java.util.ArrayList;
 
 public class Pizza implements PizzaComponent {
-    private String name;
-    private float price=0;
+    protected String name;
+    protected float price=0;
     protected ArrayList<Ingredient>listingredients;
     Pizza(String name){
         this.name=name;
