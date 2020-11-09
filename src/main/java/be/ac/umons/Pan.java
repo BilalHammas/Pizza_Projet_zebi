@@ -7,27 +7,27 @@ public class Pan extends DecoratorPizza{
     }
     @Override
     public String decoration (){
-
         return "Pan";
     }
+
     @Override
     public String getName(){
-        return name;
+        return Dec;
     }
     @Override
     public float getPrice(){
-        return price;
+        return price2;// aller dansq la basqe de donnée pour recuprer le prix
     }
     @Override
     public void setPrice(float p)
     {
 
-        this.price=p;
+        price2=3;
     }
     @Override
-    public void setName(String n)
+    public void setName(String Dec)
     {
 
-        this.name=n;
+        this.Dec=Dec;
     }
 }

@@ -14,14 +14,10 @@ public class Cheesy extends DecoratorPizza{
     }
     @Override
     public float getPrice(){
-        return price;
+         return price2=3;
     }
-    @Override
-    public void setPrice(float p)
-    {
+// il faut definir le prix a partir de la base de donnée
 
-        this.price=p;
-    }
     @Override
     public void setName(String n)
     {
@@ -29,5 +25,8 @@ public class Cheesy extends DecoratorPizza{
         this.name=n;
     }
 
+    @Override
+    public void setPrice(float p) {
 
+    }
 }
