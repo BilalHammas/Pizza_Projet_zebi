@@ -13,9 +13,7 @@ public abstract class DecoratorPizza implements PizzaComponent {
  return sum;
 }
 public float getPrice(){
-
   return price2;
-
 }
 public DecoratorPizza( Pizza p, String Dec){
 this.p =p;
