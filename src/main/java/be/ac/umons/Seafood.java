@@ -9,27 +9,6 @@ import java.sql.SQLException;
 
 public class Seafood extends Ingredient {
     public Seafood() {
-        try {
-
-            //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
-            DBSingleton db = DBSingleton.getSingleton();
-
-            ResultSet rs = db.querySelect("SELECT * FROM ingredients");
-
-            while (rs.next()) {
-                if ("Sea food".equals(rs.getString("name"))) {
-                    this.setPrice(rs.getBigDecimal("price").floatValue());
-                }
-            }
-            rs.close();
-            //updateQueryDemo();
-
-        } catch (SQLException e) {
-            ColorPrint.printError("SQL ERROR : " + e.getMessage());
-        } catch (NullPointerException e) {
-            System.out.print(AnsiColor.RED);
-            e.printStackTrace();
-            System.out.print(AnsiColor.RESET);
-        }
+        this.setPrice(App.getPriceFromIngredient("Sea food"));
     }
 }

@@ -34,7 +34,7 @@ public class App
             while (rs.next()) {
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(rs.getString("name"));
-                ingredient.setPrice(rs.getBigDecimal("price"));
+                ingredient.setPrice(rs.getBigDecimal("price").floatValue());
 
                 ingredients.put(ingredient.getName(), ingredient);
             }
@@ -104,7 +104,7 @@ public class App
         return new DecimalFormat("0.00", decimalSymbol).format(money);
     }
 
-    public static BigDecimal getPriceFromIngredient(String ingredientName) {
+    public static float getPriceFromIngredient(String ingredientName) {
         try {
 
             //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
@@ -114,7 +114,7 @@ public class App
 
             while (rs.next()) {
                 if (ingredientName.equals(rs.getString("name"))) {
-                    return rs.getBigDecimal("price");
+                    return rs.getBigDecimal("price").floatValue();
                 }
             }
             rs.close();
@@ -127,7 +127,8 @@ public class App
             e.printStackTrace();
             System.out.print(AnsiColor.RESET);
         }
-        return null;
+        return 0;
     }
 }
+
 
