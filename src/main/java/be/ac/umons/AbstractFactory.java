@@ -3,7 +3,7 @@ package be.ac.umons;
 public abstract class AbstractFactory
 {
     String name;
-    public getFactory(String name){
+    public  AbstractFactory getFactory(String name){
         if (name=="FactoryHut"){
             return new FactoryHut();
         }
