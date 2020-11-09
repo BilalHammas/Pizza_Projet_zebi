@@ -104,5 +104,30 @@ public class App
         return new DecimalFormat("0.00", decimalSymbol).format(money);
     }
 
+    public static BigDecimal getPriceFromIngredient(String ingredientName) {
+        try {
+
+            //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
+            DBSingleton db = DBSingleton.getSingleton();
+
+            ResultSet rs = db.querySelect("SELECT * FROM ingredients");
+
+            while (rs.next()) {
+                if (ingredientName.equals(rs.getString("name"))) {
+                    return rs.getBigDecimal("price");
+                }
+            }
+            rs.close();
+            //updateQueryDemo();
+
+        } catch (SQLException e) {
+            ColorPrint.printError("SQL ERROR : " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.print(AnsiColor.RED);
+            e.printStackTrace();
+            System.out.print(AnsiColor.RESET);
+        }
+        return null;
+    }
 }
 
