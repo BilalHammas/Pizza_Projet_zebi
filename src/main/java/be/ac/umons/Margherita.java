@@ -11,7 +11,6 @@ public class Margherita extends Pizza {
         return (price=D.getPrice()+W.getPrice()+ C.getPrice());
     }
 
-
     Margherita(){
         super("Margherita");
         addIngredient(new Cheese());

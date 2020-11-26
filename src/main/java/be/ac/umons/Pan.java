@@ -21,7 +21,6 @@ public class Pan extends DecoratorPizza{
     @Override
     public void setPrice(float p)
     {
-
         price2=3;
     }
     @Override

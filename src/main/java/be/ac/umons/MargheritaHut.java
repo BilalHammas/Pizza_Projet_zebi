@@ -8,7 +8,6 @@ public class MargheritaHut extends Margherita {
         return (price=C.getPrice()+O.getPrice());
     }
 
-
     public MargheritaHut(){
         super();
         setName("MarheritaHut");

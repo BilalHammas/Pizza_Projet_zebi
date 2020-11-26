@@ -8,10 +8,7 @@ public class FactoryHut extends AbstractFactory {
             return new FactoryHut();
         }
         return Hut;
-
     }
-
-
 
     static int stockP=2;
     static int stockM=2;
@@ -19,28 +16,21 @@ public class FactoryHut extends AbstractFactory {
     static int stockC=2;
     @Override
     public Pizza createPizza(String name) {
-               if (name=="Prosciutto" && stockP>0){
-                stockP--;
-                ProsciuttoHut tmp=new ProsciuttoHut();
-            return tmp;
-             }
-        else if (name=="FruttiDiMare" && stockF>0){
+        if (name.equals("Prosciutto") && stockP>0){
+            stockP--;
+            return new ProsciuttoHut();
+        }
+        else if (name.equals("FruttiDiMare") && stockF>0){
             stockF--;
-            FruttiDiMare tmp=new FruttiDiMareHut();
-
-            return tmp;
+            return new FruttiDiMareHut();
         }
-        else if (name=="Carbonara" && stockC>0){
+        else if (name.equals("Carbonara") && stockC>0){
             stockC--;
-            Carbonara tmp=new CarbonaraHut();
-
-            return tmp;
+            return new CarbonaraHut();
         }
-        else if (name=="Margherita" && stockM>0){
+        else if (name.equals("Margherita") && stockM>0){
             stockM--;
-            Margherita tmp=new MargheritaHut();
-
-            return tmp;
+            return new MargheritaHut();
         }
         else{
             return null;
