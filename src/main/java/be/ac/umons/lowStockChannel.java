@@ -18,8 +18,9 @@ public class lowStockChannel implements Subject {
         if (obj == null) {
             throw new NullPointerException("The observer passed is null");
         }
-        if (!observers.contains(obj))
+        if (!observers.contains(obj)) {
             observers.add(obj);
+        }
     }
 
     @Override
@@ -27,8 +28,9 @@ public class lowStockChannel implements Subject {
         if (obj == null) {
             throw new NullPointerException("The observer passed is null");
         }
-        if (observers.contains(obj))
+        if (observers.contains(obj)) {
             observers.remove(obj);
+        }
     }
 
     @Override

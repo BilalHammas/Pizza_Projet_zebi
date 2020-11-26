@@ -28,14 +28,4 @@ public class Ingredient {
     public void setPrice(float price) {
         this.price = price;
     }
-
-    public void registerObserver(Observer o) {
-        observerCollection.add(o);
-    }
-
-    public void unregisterObserver(Observer o) {
-        observerCollection.remove(o);
-    }
-
-    public void notifyOberservers();
 }

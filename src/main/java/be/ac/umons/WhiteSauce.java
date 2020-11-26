@@ -8,14 +8,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class WhiteSauce extends Ingredient {
-    public static stock = 5;
+    public static int stock = 5;
     public WhiteSauce() {
         this.setPrice(App.getPriceFromIngredient("White cream"));
-        if stock >= 1 {
+        if(stock >= 1){
             stock--;
         }
-        if stock == 0 {
-            Distributeur.stockChannel.lowStockAlert("White cream")
+        if(stock == 0){
+            Distributeur.stockChannel.lowStockAlert("White cream");
         }
     }
 }

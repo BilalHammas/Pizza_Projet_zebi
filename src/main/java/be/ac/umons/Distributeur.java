@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class Distributeur {
     public static lowStockChannel stockChannel = new lowStockChannel();
-    public static Observer user = new Viewers("Utilisateur");
-    stockChannel.register(user);
-    user.setSubject(stockChannel);
+    public static Viewers user = new Viewers("Utilisateur");
 
-    user.update(); /* Permets d'update l'user même si c'est fait automatiquement. */
+    public Distributeur() {
+        stockChannel.register(user);
+        user.setSubject(stockChannel);
+        user.update(); /* Permets d'update l'user même si c'est fait automatiquement. */
+    }
 
     public AbstractFactory WichFactory() {
         int numero = 0;
