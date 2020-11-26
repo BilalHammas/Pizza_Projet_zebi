@@ -30,12 +30,13 @@ public class Distributeur {
     }
 
 
-    public void Commande(AbstractFactory f) {
+    public ArrayList<PizzaComponent> Commande(AbstractFactory f) {
         int j = 0;
         int numero = 0;
         int deco;
         ArrayList<String> Choix = new ArrayList<String>();
         ArrayList<String> TesPizza = new ArrayList<String>();
+        ArrayList<PizzaComponent> tespizza= new ArrayList<PizzaComponent>();
         Choix.add("Proscuitto");
         Choix.add("FruttiDiMare");
         Choix.add("Margheritha");
@@ -62,20 +63,23 @@ public class Distributeur {
             } while (deco != 0 || deco != 1 || deco != 2);
             if (deco == 1) {
                 Cheesy p2 = new Cheesy(p);
+                tespizza.add(p2);
                 break;
 
 
             } else if (deco == 2) {
                 Pan p2 = new Pan(p);
+                tespizza.add(p2);
                 break;
 
             } else {
+                tespizza.add(p);
                 break;
 
             }
 
         }
-
+         return tespizza;
 
     }
 
@@ -85,16 +89,20 @@ public class Distributeur {
 
 
 
-    public void NbrCommande(){
+    public void FaireCommande(ArrayList<PizzaComponent>tespizza){
         int j=0;
         int numero=0;
-
+        int size= tespizza.size();
         Scanner cin= new Scanner(System.in);
         System.out.println("Combien de pizza voulez vous?");
         int number=cin.nextInt();
-        for(j=0;j<number;j++){
+        while(size>=2){
+            Thread t = new Thread(new TestThread(tespizza,size,numero));
 
+            t.start();
 
+            numero=numero+2;
+         size=size-2;
         }
 
 
