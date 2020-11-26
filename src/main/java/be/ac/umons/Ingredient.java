@@ -1,10 +1,14 @@
 package be.ac.umons;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ingredient {
     private String name;
     private float price;
+    private static List<Observer> observerCollection;
+    public static int stock = 5;
 
     public Ingredient() {
     }
@@ -24,4 +28,14 @@ public class Ingredient {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public void registerObserver(Observer o) {
+        observerCollection.add(o);
+    }
+
+    public void unregisterObserver(Observer o) {
+        observerCollection.remove(o);
+    }
+
+    public void notifyOberservers();
 }

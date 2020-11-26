@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Distributeur {
+    public static lowStockChannel stockChannel = new lowStockChannel();
+    public static Observer user = new Viewers("Utilisateur");
+    stockChannel.register(user);
+    user.setSubject(stockChannel);
+
+    user.update(); /* Permets d'update l'user même si c'est fait automatiquement. */
 
     public AbstractFactory WichFactory() {
         int numero = 0;
@@ -41,8 +47,6 @@ public class Distributeur {
         Choix.add("FruttiDiMare");
         Choix.add("Margheritha");
         Choix.add("Carbonara");
-        ;
-
 
         Scanner cin = new Scanner(System.in);
         System.out.println("Combien de pizza voulez");
@@ -83,12 +87,6 @@ public class Distributeur {
 
     }
 
-
-
-
-
-
-
     public void FaireCommande(ArrayList<PizzaComponent>tespizza){
         int j=0;
         int numero=0;
@@ -104,29 +102,5 @@ public class Distributeur {
             numero=numero+2;
          size=size-2;
         }
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

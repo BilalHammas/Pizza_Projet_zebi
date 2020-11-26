@@ -8,7 +8,6 @@ public class Cheesy extends DecoratorPizza{
     public String decoration(){
         Dec="Cheesy";
         return name="Cheesy";
-
     }
     @Override
     public String getName(){
@@ -23,7 +22,6 @@ public class Cheesy extends DecoratorPizza{
     public void setName(String name){
 
     }
-
 
     @Override
     public void setPrice(float price2) {

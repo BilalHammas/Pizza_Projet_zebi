@@ -13,7 +13,6 @@ public class MargheritaHut extends Margherita {
         super();
         setName("MarheritaHut");
         addIngredient(new Olive());
-
     }
 
 }

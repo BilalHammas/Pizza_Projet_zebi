@@ -18,9 +18,4 @@ public class Margherita extends Pizza {
         addIngredient(new Dough());
         addIngredient(new TomatoSauce());
     }
-
-
-
-
-
 }

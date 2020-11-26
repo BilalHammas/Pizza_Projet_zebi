@@ -8,7 +8,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Mushroom extends Ingredient{
+    public static stock = 5;
     public Mushroom() {
         this.setPrice(App.getPriceFromIngredient("Mushroom"));
+        if stock >= 1 {
+            stock--;
+        }
+        if stock == 0 {
+            Distributeur.stockChannel.lowStockAlert("Olive")
+        }
     }
 }
