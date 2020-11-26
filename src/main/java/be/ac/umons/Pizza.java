@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Pizza implements PizzaComponent {
     protected String name;
     protected float price=0;
-    protected ArrayList<Ingredient>listingredients;
+    protected ArrayList<Ingredient>listingredients = new ArrayList<>();
     Pizza(String name){
         this.name=name;
     }

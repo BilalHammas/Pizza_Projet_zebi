@@ -5,10 +5,10 @@ public abstract class AbstractFactory
     String name;
 
     public  AbstractFactory getFactory(String name){
-        if (name=="FactoryHut"){
+        if (name.equals("FactoryHut")){
             return new FactoryHut();
         }
-        else if (name=="FactoryDominos"){
+        else if (name.equals("FactoryDominos")){
             return new FactoryDominos();
         }
         else{
@@ -17,7 +17,8 @@ public abstract class AbstractFactory
     }
 
 
-   public  Pizza createPizza(String name){
+   public Pizza createPizza(String name){
+        System.out.println("on est la");
         return new Pizza(name);
     }
 

@@ -11,7 +11,7 @@ public class FruttiDiMare extends Pizza {
         return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
     }
     public FruttiDiMare(){
-        super("FrittiDiMare");
+        super("FruttiDiMare");
         addIngredient(new Seafood());
         addIngredient(new TomatoSauce());
         addIngredient(new Dough());

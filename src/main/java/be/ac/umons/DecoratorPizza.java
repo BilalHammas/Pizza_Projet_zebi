@@ -18,6 +18,7 @@ public float getPrice(){
 public DecoratorPizza( Pizza p, String Dec){
 this.p =p;
 this.Dec=Dec;
+this.name = p.getName();
 }
 
 public String decoration(){

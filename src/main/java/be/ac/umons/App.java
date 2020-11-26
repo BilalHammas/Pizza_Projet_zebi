@@ -9,8 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 
 /**
@@ -22,7 +24,15 @@ public class App
 
     public static void main( String[] args )
     {
+        Distributeur petitest = new Distributeur();
+        AbstractFactory factoryTest = petitest.WichFactory();
+        ArrayList<PizzaComponent> arraypizza = petitest.Commande(factoryTest);
+        System.out.println(arraypizza);
+        petitest.FaireCommande(arraypizza);
 
+        /*
+
+        POUR AFFICHER LES PRIX DES INGRÉDIENTS
 
         Map<String, Ingredient> ingredients = new HashMap<>();
 
@@ -52,12 +62,13 @@ public class App
             System.out.print(AnsiColor.RESET);
         }
 
-        /*
+
         for (Map.Entry<String, Ingredient> ingredientEntry : ingredients.entrySet()) {
             System.out.println(ingredientEntry.getValue().getName() + " : " + ingredientEntry.getValue().getPrice() + " €.");
-        }*/
+        }
 
         ingredients.forEach((k, v) -> System.out.println(k + " : " + v.getPrice() + " €"));
+        */
     }
 
     /**
@@ -107,6 +118,8 @@ public class App
     }
 
     public static float getPriceFromIngredient(String ingredientName) {
+        return 1;
+        /*
         try {
 
             //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
@@ -130,6 +143,8 @@ public class App
             System.out.print(AnsiColor.RESET);
         }
         return 0;
+
+         */
     }
 }
 

@@ -13,7 +13,7 @@ public class Prosciutto extends Pizza{
 
     Prosciutto()
     {
-        super("Carbonara");
+        super("Prosciutto");
         addIngredient(new Dough());
         addIngredient(new TomatoSauce());
         addIngredient(new Cheese());
