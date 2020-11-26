@@ -93,14 +93,14 @@ public class Distributeur {
         int j=0;
         int numero=0;
         int size= tespizza.size();
+        int size1= size
         Scanner cin= new Scanner(System.in);
         System.out.println("Combien de pizza voulez vous?");
         int number=cin.nextInt();
-        while(size>=2){
+        while(numero<=size1-1){
             Thread t = new Thread(new TestThread(tespizza,size,numero));
 
             t.start();
-
             numero=numero+2;
          size=size-2;
         }
