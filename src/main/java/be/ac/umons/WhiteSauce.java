@@ -13,9 +13,19 @@ public class WhiteSauce extends Ingredient {
         this.setPrice(App.getPriceFromIngredient("White cream"));
         if(stock >= 1){
             stock--;
+            int a=getStock();
+            int b=0;
+            stock=Math.max(a,0);
         }
         if(stock == 0){
             Distributeur.stockChannel.lowStockAlert("White cream");
         }
+    }
+    @Override
+    public void provide() {
+        stock=5;
+    }
+    public int getStock(){
+        return stock;
     }
 }

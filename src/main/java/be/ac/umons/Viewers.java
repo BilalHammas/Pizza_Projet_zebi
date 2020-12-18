@@ -25,4 +25,5 @@ public class Viewers implements Observer {
             throw new NullPointerException("The subject object is null");
         this.newsChannelObj = subject;
     }
+
 }

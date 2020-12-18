@@ -2,7 +2,7 @@ package be.ac.umons;
 
 public class Pan extends DecoratorPizza{
     public  Pan(Pizza p){
-          super(p,"Pan",3);
+          super(p,"Pan",3/2);
 
     }
     @Override

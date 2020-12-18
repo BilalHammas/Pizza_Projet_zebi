@@ -8,14 +8,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Olive extends Ingredient{
-    public static int stock = 5;
+    protected static int stock = 5;
     public Olive() {
         this.setPrice(App.getPriceFromIngredient("Olive"));
          if (stock >= 1) {
             stock--;
+             int a=getStock();
+             int b=0;
+             stock=Math.max(a,0);
         }
          if (stock == 0) {
             Distributeur.stockChannel.lowStockAlert("Olive");
         }
+    }
+
+    @Override
+    public void provide() {
+        stock=5;
+    }
+    public int getStock(){
+        return stock;
     }
 }
