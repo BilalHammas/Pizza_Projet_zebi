@@ -5,6 +5,10 @@ public class Pizza implements PizzaComponent {
     protected String name;
     protected float price=0;
     protected ArrayList<Ingredient>listingredients = new ArrayList<Ingredient>();
+    public  int getStock3() {
+    return 3;
+    }
+
     Pizza(String name){
         this.name=name;
     }

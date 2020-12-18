@@ -37,6 +37,7 @@ public class FruttiDiMare extends Pizza {
         addIngredient(new Dough());
         addIngredient(new Cheese());
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

@@ -31,6 +31,7 @@ public class ProsciuttoHut extends Prosciutto {
         setName("ProsciuttoHut");
         addIngredient(new Olive());
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

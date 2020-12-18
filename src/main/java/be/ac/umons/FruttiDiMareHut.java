@@ -34,6 +34,7 @@ public class FruttiDiMareHut extends FruttiDiMare {
         setName("FruttiDiMareHut");
         addIngredient(new Olive());
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

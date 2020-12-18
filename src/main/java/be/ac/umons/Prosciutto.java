@@ -44,6 +44,7 @@ public class Prosciutto extends Pizza{
         addIngredient(new Ham());
         //ceci est un commentaire
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

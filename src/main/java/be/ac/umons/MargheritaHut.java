@@ -37,6 +37,7 @@ public class MargheritaHut extends Margherita {
         setName("MarheritaHut");
         addIngredient(new Olive());
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

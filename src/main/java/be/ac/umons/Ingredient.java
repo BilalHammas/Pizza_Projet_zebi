@@ -31,6 +31,9 @@ public class Ingredient {
     public void provide (){
 
 
-
     };
+    public int getStock(){
+        return 3;
+
+    }
 }

@@ -27,6 +27,7 @@ public class Cheese extends Ingredient {
     public void provide() {
         stock=5;
     }
+    @Override
     public int getStock(){
         return stock;
     }

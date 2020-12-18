@@ -25,6 +25,7 @@ public class CarbonaraHut extends Carbonara {
         stock3= Collections.min(Stocage);
 
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

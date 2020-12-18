@@ -7,6 +7,7 @@ public class Carbonara extends Pizza
 
 
     private static int stock3=1;
+
     private static void StockX(){
         Dough D=new Dough();
         WhiteSauce W= new WhiteSauce();
@@ -24,6 +25,7 @@ public class Carbonara extends Pizza
         stock3= Collections.min(Stocage);
 
     }
+    @Override
     public  int getStock3(){
         return stock3;
     }

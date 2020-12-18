@@ -25,6 +25,7 @@ public class Ham extends Ingredient {
     public void provide() {
         stock=5;
     }
+    @Override
     public int getStock(){
         return stock;
     }
