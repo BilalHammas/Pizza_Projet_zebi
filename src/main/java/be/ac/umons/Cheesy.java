@@ -1,8 +1,9 @@
 package be.ac.umons;
 
 public class Cheesy extends DecoratorPizza{
+
     public Cheesy(Pizza p){
-     super(p,"Cheesy");
+     super(p,"Cheesy",2);
     }
 
     @Override
