@@ -106,10 +106,14 @@ public class Distributeur {
         int number=cin.nextInt();
         while(numero<=size1-1){
             Thread t = new Thread(new TestThread(tespizza,numero));
-
             t.start();
-            numero=numero+2;
-         size=size-2;
+            int numero2= numero+1;
+            if(numero2<=size-1) {
+                Thread t2 = new Thread(new TestThread(tespizza, numero2));
+                t2.start();
+            }
+            numero=numero++;
+
         }
     }
 }
