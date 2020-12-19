@@ -24,9 +24,7 @@ public class FruttiDiMareHut extends FruttiDiMare {
     }
     @Override
     public float getPrice(){
-        Olive O=new Olive();
-        FruttiDiMare C=new FruttiDiMareHut();
-        return (price=C.getPrice()+O.getPrice());
+        return (float) 6.5;
     }
 
     FruttiDiMareHut(){

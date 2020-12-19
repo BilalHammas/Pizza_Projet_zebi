@@ -32,11 +32,8 @@ public class Carbonara extends Pizza
 
     @Override
     public float getPrice() {
-        Dough D=new Dough();
-        WhiteSauce W= new WhiteSauce();
-        Cheese C= new Cheese();
-        Ham H=new Ham();
-        return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
+        return (float) 9;
+        //return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
     }
 
     Carbonara()   {

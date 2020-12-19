@@ -27,11 +27,8 @@ public class Prosciutto extends Pizza{
     }
     @Override
     public float getPrice() {
-        Dough D=new Dough();
-        TomatoSauce W= new TomatoSauce();
-        Cheese C= new Cheese();
-        Ham H=new Ham();
-        return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
+        return (float) 8.5;
+        //return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
     }
 
 

@@ -31,9 +31,8 @@ public class CarbonaraHut extends Carbonara {
     }
     @Override
     public float getPrice(){
-         Olive O=new Olive();
-        Carbonara C=new Carbonara();
-        return (price=C.getPrice()+O.getPrice());
+        return (float) 10;
+        //return (price=C.getPrice()+O.getPrice());
     }
 
 

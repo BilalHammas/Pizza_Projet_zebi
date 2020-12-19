@@ -15,8 +15,8 @@ public class Viewers implements Observer {
 
         if (msg == null)
             System.out.println("Aucune notification ");
-        else
-            System.out.println("Le stock de " + msg +" est tombé à zéro ");
+        //else
+          //  System.out.println("Le stock de " + msg +" est tombé à zéro ");
     }
 
     @Override

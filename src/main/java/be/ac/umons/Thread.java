@@ -14,7 +14,11 @@ class TestThread extends Thread {
         }
 
         public void run() {
-            System.out.println(" Traitement de la Pizza:" + (tespizza.get(i)).getName());
+            try {
+                System.out.println("Traitement de la Pizza:" + (tespizza.get(i)).getName());
+            } finally {
+                System.out.println("donee");
+            }
         }
     }
 

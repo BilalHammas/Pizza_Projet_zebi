@@ -20,15 +20,13 @@ public class FruttiDiMare extends Pizza {
         Stocage.add(w);
         ////Stocage.add(o);
         stock3= Collections.min(Stocage);
-
     }
+
     @Override
     public float getPrice() {
-        Dough D=new Dough();
-        TomatoSauce W= new TomatoSauce();
-        Cheese C= new Cheese();
-        Seafood H=new Seafood();
-        return (price=D.getPrice()+W.getPrice()+ C.getPrice()+H.getPrice());
+        //Ingredient I = new Ingredient();
+        //return (I.getPrice("Dough") + I.getPrice("Cheese") + I.getPrice("TomatoSauce") + I.getPrice("Seafood"));
+        return (float) 6.5;
     }
     public FruttiDiMare(){
         super("FruttiDiMare");
@@ -38,7 +36,7 @@ public class FruttiDiMare extends Pizza {
         addIngredient(new Cheese());
     }
     @Override
-    public  int getStock3(){
+    public int getStock3(){
         return stock3;
     }
 }

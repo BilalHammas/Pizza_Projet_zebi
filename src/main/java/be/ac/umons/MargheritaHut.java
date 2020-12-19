@@ -27,9 +27,7 @@ public class MargheritaHut extends Margherita {
     }
     @Override
     public float getPrice(){
-        Olive O=new Olive();
-        Margherita C=new Margherita();
-        return (price=C.getPrice()+O.getPrice());
+        return (float) 6.5;
     }
 
     public MargheritaHut(){

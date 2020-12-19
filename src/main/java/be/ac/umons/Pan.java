@@ -3,8 +3,8 @@ package be.ac.umons;
 public class Pan extends DecoratorPizza{
     public  Pan(Pizza p){
           super(p,"Pan",3/2);
-
     }
+
     @Override
     public String decoration (){
         return "Pan";
@@ -26,7 +26,6 @@ public class Pan extends DecoratorPizza{
     @Override
     public void setName(String Dec)
     {
-
         this.Dec=Dec;
     }
 }

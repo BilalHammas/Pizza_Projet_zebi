@@ -27,11 +27,13 @@ public class Margherita extends Pizza {
     }
     @Override
     public float getPrice() {
-        Dough D=new Dough();
-        TomatoSauce W= new TomatoSauce();
-        Cheese C= new Cheese();
+        /*
+        Ingredient I = new Ingredient();
+        return (I.getPrice("Dough") + I.getPrice("Cheese") + I.getPrice("TomatoSauce"));
 
-        return (price=D.getPrice()+W.getPrice()+ C.getPrice());
+
+        */
+        return (float) 6.5;
     }
 
     Margherita(){
