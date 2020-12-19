@@ -7,10 +7,13 @@ public class Margherita extends Pizza {
     private static int stock3=1;
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         TomatoSauce W= new TomatoSauce();
-
+        W.AddStock();
         Olive O= new Olive();
+        O.AddStock();
         Cheese C= new Cheese();
+        C.AddStock();
         int i= W.getStock();
 
         int c=C.getStock();
@@ -27,20 +30,21 @@ public class Margherita extends Pizza {
     }
     @Override
     public float getPrice() {
-        /*
-        Ingredient I = new Ingredient();
-        return (I.getPrice("Dough") + I.getPrice("Cheese") + I.getPrice("TomatoSauce"));
 
-
-        */
-        return (float) 6.5;
+        return price;
     }
 
     Margherita(){
         super("Margherita");
-        addIngredient(new Cheese());
-        addIngredient(new Dough());
-        addIngredient(new TomatoSauce());
+        Dough D=new Dough();
+        D.AddStock();
+        TomatoSauce W= new TomatoSauce();
+        W.AddStock();
+        Cheese C= new Cheese();
+        price=D.getPrice("Dough")+W.getPrice("TomatoSauce")+ C.getPrice("Cheese");
+        addIngredient( C);
+        addIngredient(D);
+        addIngredient(W);
     }
     @Override
     public  int getStock3(){

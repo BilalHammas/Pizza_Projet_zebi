@@ -7,9 +7,13 @@ public class FruttiDiMare extends Pizza {
     private static int stock3=1;
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         TomatoSauce W= new TomatoSauce();
+        W.AddStock();
         Seafood H=new Seafood();
+        H.AddStock();
         Olive O=new Olive();
+        O.AddStock();
         int i=H.getStock();
         int j=W.getStock();
         int w=D.getStock();
@@ -24,12 +28,14 @@ public class FruttiDiMare extends Pizza {
 
     @Override
     public float getPrice() {
-        //Ingredient I = new Ingredient();
-        //return (I.getPrice("Dough") + I.getPrice("Cheese") + I.getPrice("TomatoSauce") + I.getPrice("Seafood"));
-        return (float) 6.5;
+        return price;
     }
     public FruttiDiMare(){
         super("FruttiDiMare");
+        Dough D=new Dough();
+        TomatoSauce W= new TomatoSauce();
+        Seafood H=new Seafood();
+        price+=D.getPrice("Dough")+W.getPrice("Tomatosauce")+H.getPrice("Seafood");
         addIngredient(new Seafood());
         addIngredient(new TomatoSauce());
         addIngredient(new Dough());

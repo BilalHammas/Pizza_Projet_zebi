@@ -7,9 +7,13 @@ public class FruttiDiMareHut extends FruttiDiMare {
     private static int stock3=1;
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         TomatoSauce W= new TomatoSauce();
+        W.AddStock();
         Seafood H=new Seafood();
+        H.AddStock();
         Olive O=new Olive();
+        O.AddStock();
         int i=H.getStock();
         int j=W.getStock();
         int w=D.getStock();
@@ -24,13 +28,16 @@ public class FruttiDiMareHut extends FruttiDiMare {
     }
     @Override
     public float getPrice(){
-        return (float) 6.5;
+        return price ;
     }
 
     FruttiDiMareHut(){
         super();
         setName("FruttiDiMareHut");
-        addIngredient(new Olive());
+        Olive O =new Olive();
+        price+=price+O.getPrice("Olive");
+        addIngredient(O);
+        addIngredient(O);
     }
     @Override
     public  int getStock3(){

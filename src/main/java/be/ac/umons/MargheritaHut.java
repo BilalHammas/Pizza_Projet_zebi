@@ -7,10 +7,13 @@ public class MargheritaHut extends Margherita {
     private static int stock3=1;
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         TomatoSauce W= new TomatoSauce();
-
+        W.AddStock();
         Olive O= new Olive();
+        O.AddStock();
         Cheese C= new Cheese();
+        C.AddStock();
         int i= W.getStock();
 
         int c=C.getStock();
@@ -33,7 +36,9 @@ public class MargheritaHut extends Margherita {
     public MargheritaHut(){
         super();
         setName("MarheritaHut");
-        addIngredient(new Olive());
+        Olive O =new Olive();
+        price+=price+O.getPrice("Olive");
+        addIngredient(O);
     }
     @Override
     public  int getStock3(){

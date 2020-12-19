@@ -7,10 +7,15 @@ public class CarbonaraHut extends Carbonara {
     private static int stock3=1;
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         WhiteSauce W= new WhiteSauce();
+        W.AddStock();
         Ham H=new Ham();
+        H.AddStock();
         Olive O= new Olive();
+        O.AddStock();
         Cheese C= new Cheese();
+        C.AddStock();
         int i= W.getStock();
         int h=H.getStock();
         int c=C.getStock();
@@ -31,7 +36,7 @@ public class CarbonaraHut extends Carbonara {
     }
     @Override
     public float getPrice(){
-        return (float) 10;
+        return price;
         //return (price=C.getPrice()+O.getPrice());
     }
 
@@ -40,6 +45,9 @@ public class CarbonaraHut extends Carbonara {
         super();
         setName("CarbonaraHut");
         addIngredient(new Olive());
+        Olive O =new Olive();
+        price+=price+O.getPrice("Olive");
+        addIngredient(O);
     }
 
 

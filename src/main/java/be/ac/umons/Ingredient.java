@@ -23,21 +23,21 @@ public class Ingredient {
 
     public float getPrice(String elem) {
         if(elem.equals("Olive")) {
-            return (float) 1;
+            return App.getPriceFromIngredient("Olive");
         } else if(elem.equals("Dough")) {
-            return (float) 3;
+            return App.getPriceFromIngredient("Dough");
         } else if(elem.equals("TomatoSauce")) {
-            return (float) 1.5;
+            return App.getPriceFromIngredient("TomatoSauce");
         } else if(elem.equals("WhiteSauce")) {
-            return (float) 1.5;
+            return App.getPriceFromIngredient("WhiteSauce");
         } else if(elem.equals("Cheese")) {
-            return (float) 2;
+            return App.getPriceFromIngredient("Cheese");
         } else if(elem.equals("Mushroom")) {
-            return (float) 1;
+            return App.getPriceFromIngredient("Mushroom");
         } else if(elem.equals("Seafood")) {
-            return (float) 2.5;
+            return App.getPriceFromIngredient("Seafood");
         } else if(elem.equals("Ham")) {
-            return (float) 2;
+            return App.getPriceFromIngredient("Ham");
         }
         return 0;
     }
@@ -54,6 +54,10 @@ public class Ingredient {
     };
     public int getStock(){
         return 5;
+
+    }
+    public void AddStock(){
+
 
     }
 }

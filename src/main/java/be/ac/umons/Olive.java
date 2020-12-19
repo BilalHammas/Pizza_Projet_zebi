@@ -30,4 +30,9 @@ public class Olive extends Ingredient{
     public int getStock(){
         return stock;
     }
+    @Override
+    public void AddStock(){
+        stock+=1;
+
+    }
 }

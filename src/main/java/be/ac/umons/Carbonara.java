@@ -10,10 +10,15 @@ public class Carbonara extends Pizza
 
     private static void StockX(){
         Dough D=new Dough();
+        D.AddStock();
         WhiteSauce W= new WhiteSauce();
+        W.AddStock();
         Ham H=new Ham();
+        H.AddStock();
         Cheese C= new Cheese();
+        C.AddStock();
         int i=H.getStock();
+
         int h=H.getStock();
         int w=D.getStock();
         int c=D.getStock();
@@ -37,10 +42,12 @@ public class Carbonara extends Pizza
     }
 
     Carbonara()   {
-
-
-
          super("Carbonara");
+        Dough D=new Dough();
+        WhiteSauce W= new WhiteSauce();
+        Ham H=new Ham();
+        Cheese C= new Cheese();
+        price=C.getPrice("Cheese")+ H.getPrice("Ham")+W.getPrice("WhiteSauce")+D.getPrice("Dough");
          addIngredient(new Dough());
          addIngredient(new WhiteSauce());
          addIngredient(new Cheese());
