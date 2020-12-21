@@ -46,7 +46,7 @@ public class lowStockChannel implements Subject {
     }
 
     public void lowStockAlert(String ingredient) {
-        System.out.println("\nLe stock de : " + ingredient + " est tombé à zéro\n");
+        System.out.println("\nVeuillez rajouter des stocks d'ingrédient.\n");
         this.notification = ingredient;
         notifyObservers();
     }

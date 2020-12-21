@@ -1,8 +1,9 @@
 package be.ac.umons;
 
 public class Pan extends DecoratorPizza{
-    public  Pan(Pizza p){
-          super(p,"Pan",3/2);
+
+    public Pan(Pizza p){
+        super(p,"Pan " + p.getName(),(float) 1.5);
     }
 
     @Override
@@ -12,20 +13,20 @@ public class Pan extends DecoratorPizza{
 
     @Override
     public String getName(){
-        return Dec;
+        return name;
     }
+
     @Override
     public float getPrice(){
-        return price2;// aller dansq la basqe de donnée pour recuprer le prix
+        return price2;
     }
+// il faut definir le prix a partir de la base de donnée
+
     @Override
-    public void setPrice(float p)
-    {
-        price2=3;
-    }
+    public void setName(String name) { }
+
     @Override
-    public void setName(String Dec)
-    {
-        this.Dec=Dec;
+    public void setPrice(float price2) {
+        this.price2=price2;
     }
 }

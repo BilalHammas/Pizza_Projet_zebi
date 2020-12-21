@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="lockerPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ac.umons.lockerController">
+<AnchorPane fx:id="lockerPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ac.umons.lockerController">
    <children>
       <Button fx:id="dominosButton" layoutX="96.0" layoutY="191.0" mnemonicParsing="false" onMouseClicked="#loadDominos" prefHeight="157.0" prefWidth="254.0" text="Dominos" />
       <Button fx:id="huttButton" layoutX="547.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#loadHutt" prefHeight="168.0" prefWidth="254.0" text="Hutt" />

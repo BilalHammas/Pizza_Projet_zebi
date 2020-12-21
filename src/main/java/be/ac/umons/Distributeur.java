@@ -1,7 +1,12 @@
 package be.ac.umons;
 
+import javafx.scene.text.Text;
+
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Distributeur {
     public static lowStockChannel stockChannel = new lowStockChannel();
@@ -24,10 +29,10 @@ public class Distributeur {
         } while(numero != 0 && numero != 1);
 
         if (numero == 0) {
-            return new FactoryDominos();
+            return FactoryDominos.getFactory();
         }
         else {
-            return new FactoryHut();
+            return FactoryHut.getFactory();
         }
 
     }
@@ -75,18 +80,30 @@ public class Distributeur {
         return tespizza;
     }
 
-    public void FaireCommande(ArrayList<PizzaComponent>tespizza){
+    public void FaireCommande(ArrayList<PizzaComponent>tespizza, Controller controller) throws InterruptedException {
         int size= tespizza.size();
-        int numero = 0;
-        System.out.println("first call");
+        PizzaComponent poisonPill = new Pizza("poisonPill");
+        BlockingQueue<PizzaComponent> queue = new LinkedBlockingDeque<>();
+        System.out.println(tespizza);
+        for (PizzaComponent pizzaComponent : tespizza) {
+            queue.put(pizzaComponent);
+        }
+        queue.put(poisonPill);
+        System.out.println("voici l'array totale des pizza : ");
+        System.out.println(queue);
+        //
+        new Thread(new QueuedThread(queue, poisonPill, controller)).start();
+        new Thread(new QueuedThread(queue, poisonPill, controller)).start();
+        /*
         System.out.println("Combien de pizza voulez vous?");
         while(size>0 && numero < size){
             System.out.println(size);
-            Thread t = new Thread(new TestThread(tespizza,numero));
+            Thread t = new Thread(new QueuedThread(queue, poisonPill));
 
             t.start();
             numero += 1;
             size=size-1;
         }
+        */
     }
 }
