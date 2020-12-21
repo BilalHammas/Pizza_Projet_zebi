@@ -6,7 +6,10 @@ import be.ac.umons.util.ColorPrint;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
@@ -14,65 +17,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
 /**
  * The main class of the project.
  *
  */
 public class App
 {
+/*
+    public static void main( String[] args ) throws InterruptedException {
 
-    public static void main( String[] args )
-    {
-        Distributeur petitest = new Distributeur();
-        AbstractFactory factoryTest = petitest.WichFactory();
-        ArrayList<PizzaComponent> arraypizza = petitest.Commande(factoryTest);
-        System.out.println(arraypizza);
-        petitest.FaireCommande(arraypizza);
-
-        /*
-
-        POUR AFFICHER LES PRIX DES INGRÉDIENTS
-
-        Map<String, Ingredient> ingredients = new HashMap<>();
-
-        try {
-
-            //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
-            DBSingleton db = DBSingleton.getSingleton();
-
-            ResultSet rs = db.querySelect("SELECT * FROM ingredients");
-
-            while (rs.next()) {
-                Ingredient ingredient = new Ingredient();
-                ingredient.setName(rs.getString("name"));
-                ingredient.setPrice(rs.getBigDecimal("price").floatValue());
-
-                ingredients.put(ingredient.getName(), ingredient);
-            }
-            rs.close();
-
-            //updateQueryDemo();
-
-        } catch (SQLException e) {
-            ColorPrint.printError("SQL ERROR : " + e.getMessage());
-        } catch (NullPointerException e) {
-            System.out.print(AnsiColor.RED);
-            e.printStackTrace();
-            System.out.print(AnsiColor.RESET);
-        }
-
-
-        for (Map.Entry<String, Ingredient> ingredientEntry : ingredients.entrySet()) {
-            System.out.println(ingredientEntry.getValue().getName() + " : " + ingredientEntry.getValue().getPrice() + " €.");
-        }
-
-        ingredients.forEach((k, v) -> System.out.println(k + " : " + v.getPrice() + " €"));
-        */
     }
 
-    /**
-     * Insert, update, delete example.
      */
     private static void updateQueryDemo() {
         try {
@@ -118,33 +73,25 @@ public class App
     }
 
     public static float getPriceFromIngredient(String ingredientName) {
-        return 1;
-        /*
         try {
+            String url = "jdbc:mysql://localhost/user01_pizzeria?serverTimezone=UTC";
+            String username = "root";
+            String password = "";
 
-            //DBSingleton db = DBSingleton.getSingleton("jdbc://localhost:3306/mysql", "username", "password");
-            DBSingleton db = DBSingleton.getSingleton();
-
+            DBSingleton db = DBSingleton.getSingleton(url, username, password);
             ResultSet rs = db.querySelect("SELECT * FROM ingredients");
-
             while (rs.next()) {
-                if (ingredientName.equals(rs.getString("name"))) {
-                    return rs.getBigDecimal("price").floatValue();
+                String compare = rs.getString("name");
+                if(ingredientName.equals(compare)) {
+                    return(rs.getBigDecimal("price").floatValue());
                 }
             }
-            rs.close();
-            //updateQueryDemo();
-
-        } catch (SQLException e) {
-            ColorPrint.printError("SQL ERROR : " + e.getMessage());
-        } catch (NullPointerException e) {
-            System.out.print(AnsiColor.RED);
-            e.printStackTrace();
-            System.out.print(AnsiColor.RESET);
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
         }
         return 0;
-
-         */
     }
 }
 

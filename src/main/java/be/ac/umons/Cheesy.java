@@ -3,7 +3,7 @@ package be.ac.umons;
 public class Cheesy extends DecoratorPizza{
 
     public Cheesy(Pizza p){
-     super(p,"Cheesy",2);
+        super(p,"Cheesy " + p.getName(),2);
     }
 
     @Override

@@ -13,29 +13,39 @@ public class FactoryDominos extends AbstractFactory {
         return Dominos;
     }
 
-    static int stockP=2;
-    static int stockM=2;
-    static int stockF=2;
-    static int stockC=2;
+    private FactoryDominos(){}
+
     @Override
     public Pizza createPizza(String name) {
-        if (name.equals("Prosciutto") && stockP>0){
-            stockP--;
+        if (name.equals("Proscuitto") && (stockDough>0 && stockTomatosauce>0 && stockCheese>0 && stockHam>0)){
+            stockDough--;
+            stockTomatosauce--;
+            stockCheese--;
+            stockHam--;
             return new Prosciutto();
         }
-        else if (name.equals("FruttiDiMare") && stockF>0){
-            stockF--;
+        else if (name.equals("FruttiDiMare") && (stockDough>0 && stockTomatosauce>0 && stockCheese>0 && stockSeafood>0 )){
+            stockDough--;
+            stockTomatosauce--;
+            stockCheese--;
+            stockSeafood--;
             return new FruttiDiMare();
         }
-        else if (name.equals("Carbonara") && stockC>0){
-            stockC--;
+        else if (name.equals("Carbonara") && (stockDough>0 && stockTomatosauce>0 && stockCheese>0 && stockHam>0 )){
+            stockDough--;
+            stockWhitesauce--;
+            stockCheese--;
+            stockHam--;
             return new Carbonara();
         }
-        else if (name.equals("Margherita") && stockM>0){
-            stockM--;
+        else if (name.equals("Margherita") && (stockDough>0 && stockTomatosauce>0 && stockCheese>0)){
+            stockDough--;
+            stockTomatosauce--;
+            stockCheese--;
             return new Margherita();
         }
         else{
+            Distributeur.stockChannel.lowStockAlert("");
             return null;
         }
     }
